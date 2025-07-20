@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Frameworks</title>
+
+  <!-- Bootstrap stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="text-center mb-4">
+      <div class="d-inline-flex align-items-center custom-sidebar-logo">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="#3D8BFF" xmlns="http://www.w3.org/2000/svg" class="me-2">
+          <circle cx="10" cy="10" r="10" />
+        </svg>
+        <h5 class="text-white mb-0">Dashboard Kit</h5>
+      </div>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-grid-fill"></i> Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-ticket-fill"></i> Tickets</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-lightbulb-fill"></i> Ideas</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-people-fill"></i> Contacts</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-badge-fill"></i> Agents</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-pass-fill"></i> Articles</a></li>
+      <hr class="sidebar-divider d-none d-md-block" />
+      <li class="nav-item mt-3"><a class="nav-link" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-tags-fill"></i> Subscription</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="p-4">
+
+    <!-- Top Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-semibold mb-0">Overview</h2>
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-search"></i>
+        <i class="bi bi-bell"></i>
+        <div class="vr"></div>
+        <span>Jones Ferdinand</span>
+        <img src="https://placehold.co/36x36" class="rounded-circle" alt="avatar" />
+      </div>
+    </div>
+
+    <!-- Status Cards -->
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-3"><div class="status-card"><span>Unresolved</span><h2 class="display-6">60</h2></div></div>
+      <div class="col-6 col-md-3"><div class="status-card"><span>Overdue</span><h2 class="display-6">16</h2></div></div>
+      <div class="col-6 col-md-3"><div class="status-card"><span>Open</span><h2 class="display-6">43</h2></div></div>
+      <div class="col-6 col-md-3"><div class="status-card"><span>On hold</span><h2 class="display-6">64</h2></div></div>
+    </div>
+
+    <!-- Trends & Stats -->
+    <section class="bg-white border rounded-3 p-4">
+      <div class="row">
+        <!-- Trends Chart -->
+        <div class="col-lg-8 pe-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h6 class="fw-semibold mb-0">Today's trends</h6>
+              <small class="text-muted">as of 25 May 2019, 09:41 PM</small>
+            </div>
+            <div class="d-flex gap-3">
+              <span class="text-primary small"><i class="bi bi-dash"></i> Today</span>
+              <span class="text-muted small"><i class="bi bi-dash"></i> Yesterday</span>
+            </div>
+          </div>
+          <canvas id="myChart" width="600" height="300"></canvas>
+        </div>
+
+        <!-- Stats List -->
+        <div class="col-lg-4 border-start ps-lg-4 mt-4 mt-lg-0 stats-column">
+          <ul class="list-unstyled mb-0 small lh-lg">
+            <li class="text-center border-bottom stats-list-item">
+              <div class="d-flex flex-column align-items-center">
+                <span class="stats-list-label">Resolved</span>
+                <strong class="stats-list-value">449</strong>
+              </div>
+            </li>
+            <li class="text-center border-bottom stats-list-item">
+              <div class="d-flex flex-column align-items-center">
+                <span class="stats-list-label">Received</span>
+                <strong class="stats-list-value">426</strong>
+              </div>
+            </li>
+            <li class="text-center border-bottom stats-list-item">
+              <div class="d-flex flex-column align-items-center">
+                <span class="stats-list-label">Average first response time</span>
+                <strong class="stats-list-value">33m</strong>
+              </div>
+            </li>
+            <li class="text-center border-bottom stats-list-item">
+              <div class="d-flex flex-column align-items-center">
+                <span class="stats-list-label">Average response time</span>
+                <strong class="stats-list-value">3h 8m</strong>
+              </div>
+            </li>
+            <li class="text-center stats-list-item">
+              <div class="d-flex flex-column align-items-center">
+                <span class="stats-list-label">Resolution within SLA</span>
+                <strong class="stats-list-value">94%</strong>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tickets & Tasks -->
+    <div class="row g-4 mt-3 align-items-stretch">
+      <!-- Unresolved Tickets -->
+      <div class="col-lg-6">
+        <div class="table-wrap h-100 bg-white border rounded-3">
+          <div class="d-flex justify-content-between align-items-center p-3">
+            <div>
+              <h6 class="fw-semibold mb-0">Unresolved tickets</h6>
+              <small class="text-muted">Group: Support</small>
+            </div>
+            <a href="#" class="small text-decoration-none">View details</a>
+          </div>
+          <div class="p-2">
+            <div class="ticket-row d-flex justify-content-between align-items-center p-2 border-bottom">
+              <span>Waiting on Feature Request</span><strong>4238</strong>
+            </div>
+            <div class="ticket-row d-flex justify-content-between align-items-center p-2 border-bottom">
+              <span>Awaiting Customer Response</span><strong>1005</strong>
+            </div>
+            <div class="ticket-row d-flex justify-content-between align-items-center p-2 border-bottom">
+              <span>Awaiting Developer Fix</span><strong>914</strong>
+            </div>
+            <div class="ticket-row d-flex justify-content-between align-items-center p-2">
+              <span>Pending</span><strong>281</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tasks -->
+      <div class="col-lg-6">
+        <div class="bg-white border rounded-3 h-100">
+          <div class="d-flex justify-content-between align-items-center p-3">
+            <div>
+              <h6 class="fw-semibold mb-0">Tasks</h6>
+              <small class="text-muted">Today</small>
+            </div>
+            <a href="#" class="small text-decoration-none">View all</a>
+          </div>
+
+          <!-- Task Creator -->
+          <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+            <span class="small text-muted">Create new task</span>
+            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#createTaskModal">+</button>
+          </div>
+
+          <!-- Task Items -->
+          <div class="p-3">
+            <div class="task-item d-flex align-items-center gap-2 mb-2">
+              <input class="form-check-input mt-0" type="checkbox" id="task1" />
+              <label class="form-check-label flex-grow-1" for="task1">Finish ticket update</label>
+              <span class="badge bg-warning text-dark badge-sm">URGENT</span>
+            </div>
+            <div class="task-item d-flex align-items-center gap-2 mb-2">
+              <input class="form-check-input mt-0" type="checkbox" id="task2" />
+              <label class="form-check-label flex-grow-1" for="task2">Create new ticket example</label>
+              <span class="badge bg-success badge-sm">NEW</span>
+            </div>
+            <div class="task-item d-flex align-items-center gap-2">
+              <input class="form-check-input mt-0" type="checkbox" id="task3" />
+              <label class="form-check-label flex-grow-1" for="task3">Update ticket report</label>
+              <span class="badge bg-secondary badge-sm">DEFAULT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Create Task Modal -->
+  <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createTaskModalLabel">Create New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="taskForm">
+            <div class="mb-3">
+              <label for="taskName" class="form-label">Task Name</label>
+              <input type="text" class="form-control" id="taskName" placeholder="e.g. Handle customer inquiry" required />
+            </div>
+            <div class="mb-3">
+              <label for="taskTag" class="form-label">Tag</label>
+              <select class="form-select" id="taskTag">
+                <option value="urgent">URGENT</option>
+                <option value="new">NEW</option>
+                <option value="default">DEFAULT</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" form="taskForm" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom JS -->
+  <script src="/assets/js/chart.js"></script>
+
+</body>
+</html>

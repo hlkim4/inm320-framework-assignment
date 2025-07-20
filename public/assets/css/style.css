@@ -1,0 +1,213 @@
+:root {
+  --sidebar-width: 240px;
+  --sidebar-bg: #20232a;
+  --sidebar-link: #ced4da;
+  --sidebar-link-active-bg: #343a40;
+  --content-bg: #f8f9fa;
+}
+
+body {
+  background-color: var(--content-bg);
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  color: #fff;
+  padding-top: 1.5rem;
+}
+
+.sidebar .nav-link {
+  color: var(--sidebar-link);
+  font-size: 0.95rem;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar .nav-link:hover {
+  background: var(--sidebar-link-active-bg);
+  color: #fff;
+}
+
+.sidebar .nav-link i {
+  font-size: 1.1rem;
+}
+
+.custom-sidebar-logo {
+  margin-right: 20px;
+}
+
+/* Main content layout */
+main {
+  margin-left: var(--sidebar-width);
+  padding: 1rem 1.5rem;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Header */
+header {
+  border-radius: 0.5rem;
+}
+
+/* Status cards */
+.status-card {
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.status-card:hover {
+  border-color: #4361EE;
+  color: #4361EE;
+}
+
+.status-card:hover span {
+  color: #4361EE;
+}
+
+.status-card h2 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.status-card span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #C5C5C5;
+}
+
+/* Stats List */
+
+.stats-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.stats-column ul {
+  width: 100%;
+}
+
+
+.stats-list-label {
+  font-size: 0.85rem;
+  color: #C5C5C5;
+  margin-bottom: -0.8rem;
+}
+
+.stats-list-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+.stats-list-item {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Unresolved tickets table */
+.table-wrap {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+}
+
+/* Task list */
+.task-item {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.badge-sm {
+  font-size: 0.7rem;
+  padding: 0.3em 0.55em;
+}
+
+.ticket-row span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ticket-row strong {
+  color: #C5C5C5;
+}
+
+
+/* Create new task section */
+.create-task {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsive: fit to viewport height */
+html, body {
+  height: 100%;
+}
+
+/* ===== Responsive Styles ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  main {
+    margin-left: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .status-card {
+    padding: 0.75rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 576px) {
+  .status-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .status-card span {
+    font-size: 0.8rem;
+  }
+
+  .task-item {
+    flex-wrap: wrap;
+  }
+}
